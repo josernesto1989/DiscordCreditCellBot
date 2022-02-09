@@ -13,6 +13,7 @@ console.log("test1");
 // });
 // const tokenBot = process.env['BOTTOKEN'];
 var users = {};
+//sum 2 
 var precioDollar = 100;
 function getPrecioDollar() {
     var lastPrecioDollar = precioDollar;
@@ -145,4 +146,4 @@ function servicePriceListToString(services) {
 //keepAlive();
 console.log("antes de");
 // client.login(tokenBot);
-client.login("OTIzNjkzMjc3ODg1MTIwNTEz.YcTuZg.nXVzjwbduKyhGSa5thLsNcLEauk");
+client.login(process.env.DISCORD_TOKEN);
