@@ -16,6 +16,7 @@ console.log("test1");
 // const tokenBot = process.env['BOTTOKEN'];
 
 const users: Object | any = {};
+//sum 2 
 
 let precioDollar: number = 100;
 
@@ -190,4 +191,4 @@ function servicePriceListToString(services: Array<ServicePrice>): string{
 //keepAlive();
 console.log("antes de");
 // client.login(tokenBot);
-client.login("OTIzNjkzMjc3ODg1MTIwNTEz.YcTuZg.nXVzjwbduKyhGSa5thLsNcLEauk");
+client.login("OTIzNjkzMjc3ODg1MTIwNTEz.YcTuZg.nXVzjwbduKyhGSa5thLsNcLEauk22");
