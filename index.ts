@@ -191,4 +191,4 @@ function servicePriceListToString(services: Array<ServicePrice>): string{
 //keepAlive();
 console.log("antes de");
 // client.login(tokenBot);
-client.login("OTIzNjkzMjc3ODg1MTIwNTEz.YcTuZg.nXVzjwbduKyhGSa5thLsNcLEauk22");
+client.login(process.env.DISCORD_TOKEN);
