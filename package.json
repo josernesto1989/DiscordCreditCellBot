@@ -19,13 +19,15 @@
         "heroku",
         "discord.js"
     ],
-    "author": "synicalsyntax",
+    "author": "José Ernesto Carreño Bueno",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/synicalsyntax/discord.js-heroku/issues"
     },
     "homepage": "https://github.com/synicalsyntax/discord.js-heroku#readme",
     "dependencies": {
+        "axios": "^0.25.0",
+        "cheerio": "^1.0.0-rc.10",
         "discord.js": "^13.6.0",
         "typescript": "^4.5.5"
     }
