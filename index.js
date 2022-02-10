@@ -153,5 +153,4 @@ function servicePriceListToString(services) {
 //keepAlive();
 console.log("antes de");
 // client.login(tokenBot);
-// client.login(process.env.DISCORD_TOKEN);
-client.login('OTIzNjkzMjc3ODg1MTIwNTEz.YcTuZg.jWN2Q_GFWwRBTshdB0SvUkI1UQ8');
+client.login(process.env.DISCORD_TOKEN);
