@@ -14,7 +14,7 @@ console.log("test1");
 // const tokenBot = process.env['BOTTOKEN'];
 // const users: Object | any = {};
 // //sum 2 
-var precioDollar = 100;
+var precioDollar = 110;
 function getPrecioDollar() {
     var lastPrecioDollar = precioDollar;
     // let channel: any =client.channels.fetch("933069296731574294");

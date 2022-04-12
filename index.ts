@@ -18,7 +18,7 @@ console.log("test1");
 // const users: Object | any = {};
 // //sum 2 
 
-let precioDollar: number = 105;
+let precioDollar: number = 110;
 
 
 function getPrecioDollar():number{
