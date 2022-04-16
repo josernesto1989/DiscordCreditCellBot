@@ -1,6 +1,5 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
-console.log("test1");
 // const { MongoClient } = require('mongodb');
 // const uri = "mongodb+srv://credBotCell:Travieso09465@cluster0.itmor.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 // const clientMongo = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -18,7 +17,7 @@ console.log("test1");
 // const users: Object | any = {};
 // //sum 2 
 
-let precioDollar: number = 110;
+let precioDollar: number = 112;
 
 
 function getPrecioDollar():number{
