@@ -2,7 +2,6 @@
 exports.__esModule = true;
 var axios_1 = require("axios");
 var cheerio_1 = require("cheerio");
-console.log("test1");
 // const { MongoClient } = require('mongodb');
 // const uri = "mongodb+srv://credBotCell:Travieso09465@cluster0.itmor.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 // const clientMongo = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -14,7 +13,7 @@ console.log("test1");
 // const tokenBot = process.env['BOTTOKEN'];
 // const users: Object | any = {};
 // //sum 2 
-var precioDollar = 110;
+var precioDollar = 115;
 function getPrecioDollar() {
     var lastPrecioDollar = precioDollar;
     // let channel: any =client.channels.fetch("933069296731574294");
