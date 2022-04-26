@@ -17,7 +17,7 @@ import cheerio from 'cheerio';
 // const users: Object | any = {};
 // //sum 2 
 
-let precioDollar: number = 112;
+let precioDollar: number = 115;
 
 
 function getPrecioDollar():number{
