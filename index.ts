@@ -1,3 +1,4 @@
+require('dotenv');
 import axios from 'axios';
 import cheerio from 'cheerio';
 // const { MongoClient } = require('mongodb');
@@ -198,5 +199,4 @@ function servicePriceListToString(services: Array<ServicePrice>): string{
 
 //keepAlive();
 console.log("antes de");
-// client.login(tokenBot);
 client.login(process.env.DISCORD_TOKEN);
