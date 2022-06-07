@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 const cheerio_1 = require("cheerio");
-; // URL we're scraping
+;
 const AxiosInstance = axios_1.default.create(); // Create a new Axios Instance
 let resp = "";
 function getPriceRay(filterText, msg) {
@@ -11,7 +11,6 @@ function getPriceRay(filterText, msg) {
         'https://rayunlocker.com/index.php/resellerpricing/remote',
         'https://rayunlocker.com/index.php/resellerpricing/file'
     ];
-    console.log('aaa');
     urlList.forEach(function (url) {
         // Send an async HTTP Get request to the url
         AxiosInstance.get(url)

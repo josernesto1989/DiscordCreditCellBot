@@ -1,37 +1,17 @@
 "use strict";
 exports.__esModule = true;
-require('dotenv');
+require('dotenv').config();
 var axios_1 = require("axios");
 var cheerio_1 = require("cheerio");
-// const { MongoClient } = require('mongodb');
-// const uri = "mongodb+srv://credBotCell:Travieso09465@cluster0.itmor.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-// const clientMongo = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// clientMongo.connect(err:any => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
-// const tokenBot = process.env['BOTTOKEN'];
-// const users: Object | any = {};
-// //sum 2 
-var precioDollar = 115;
+var precioDollar = 100;
 function getPrecioDollar() {
     var lastPrecioDollar = precioDollar;
-    // let channel: any =client.channels.fetch("933069296731574294");
-    // let lastMessage:string  = channel.lastMessage.content;
-    // let lastMessageSplitted:Array<string> = lastMessage.split(" ");
-    // if(lastMessage.startsWith("!setdollar") && lastMessageSplitted.length == 2){
-    //   let value:number = +lastMessageSplitted[1];
-    //   if(value>0){
-    //     lastPrecioDollar = value;
-    //   }
-    // }
     return lastPrecioDollar;
 }
 var fs = require('fs');
 var _a = require('discord.js'), Client = _a.Client, Collection = _a.Collection, Intents = _a.Intents;
 var client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
-// const keepAlive = require("server");
+var keepAlive = require("server");
 client.on('ready', function () {
     console.log("I'm running");
 });
@@ -150,6 +130,7 @@ function getPriceRay(filterText, msg) {
 function servicePriceListToString(services) {
     return services.reduce(function (previusValue, currentValue) { return "".concat(previusValue, "\n ").concat(currentValue.name, " ").concat(currentValue.time, " ").concat(currentValue.val); }, "");
 }
-//keepAlive();
+keepAlive();
 console.log("antes de");
+console.log('token', process.env.DISCORD_TOKEN);
 client.login(process.env.DISCORD_TOKEN);

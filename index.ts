@@ -1,41 +1,16 @@
-require('dotenv');
+require('dotenv').config();
 import axios from 'axios';
 import cheerio from 'cheerio';
-// const { MongoClient } = require('mongodb');
-// const uri = "mongodb+srv://credBotCell:Travieso09465@cluster0.itmor.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-// const clientMongo = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-
-// clientMongo.connect(err:any => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
-
-
-// const tokenBot = process.env['BOTTOKEN'];
-
-// const users: Object | any = {};
-// //sum 2 
-
-let precioDollar: number = 115;
-
+let precioDollar: number = 100;
+let divisasList: {[key: string]: number}={
+'precioDollarRay':115,
+'precioMlc':110,
+'precioEuro':112
+}
 
 function getPrecioDollar():number{
   let lastPrecioDollar: number =  precioDollar;
-  // let channel: any =client.channels.fetch("933069296731574294");
-
-  // let lastMessage:string  = channel.lastMessage.content;
-
-  // let lastMessageSplitted:Array<string> = lastMessage.split(" ");
-  // if(lastMessage.startsWith("!setdollar") && lastMessageSplitted.length == 2){
-  //   let value:number = +lastMessageSplitted[1];
-  //   if(value>0){
-  //     lastPrecioDollar = value;
-  //   }
-  // }
-
-
   return lastPrecioDollar;
 }
 
@@ -43,7 +18,7 @@ function getPrecioDollar():number{
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
-// const keepAlive = require("server");
+const keepAlive = require("server");
 
 client.on('ready', () => {
   console.log("I'm running");
@@ -117,6 +92,16 @@ client.on('message', (msg: any) => {
           getPriceRay(filterWords,msg);
           
         }
+	else{
+	      if (msg.content.startsWith('!divisas')) {
+				
+			let answ:string = "";
+			for (let key in divisasList) {
+			  answ = answ +`\n${key}: divisasList[key]`;
+			}
+			msg.channel.send(answ);
+		}	
+	}
       }
 
     }
@@ -197,6 +182,8 @@ function servicePriceListToString(services: Array<ServicePrice>): string{
 }
 
 
-//keepAlive();
+keepAlive();
 console.log("antes de");
+console.log('token',process.env.DISCORD_TOKEN);
 client.login(process.env.DISCORD_TOKEN);
+

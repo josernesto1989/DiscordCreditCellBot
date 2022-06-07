@@ -1,3 +1,4 @@
+node_modules/
 lib-cov
 *.seed
 *.log
@@ -39,3 +40,5 @@ dist/**/*
 
 # ignore yarn.lock
 yarn.lock
+
+node_modules*

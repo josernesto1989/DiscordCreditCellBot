@@ -29,7 +29,8 @@
         "axios": "^0.25.0",
         "cheerio": "^1.0.0-rc.10",
         "discord.js": "^13.6.0",
-        "dotenv": "^16.0.1"
+        "dotenv": "^16.0.1",
+        "server": "^1.0.37"
     },
     "devDependencies": {
         "typescript": "^4.6.4"
