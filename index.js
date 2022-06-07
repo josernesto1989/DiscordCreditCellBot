@@ -4,6 +4,11 @@ require('dotenv').config();
 var axios_1 = require("axios");
 var cheerio_1 = require("cheerio");
 var precioDollar = 100;
+var divisasList = {
+    'precioDollarRay': 115,
+    'precioMlc': 110,
+    'precioEuro': 112
+};
 function getPrecioDollar() {
     var lastPrecioDollar = precioDollar;
     return lastPrecioDollar;
@@ -44,26 +49,26 @@ client.on('message', function (msg) {
     if (msg.author.id != client.user.id) {
         if (msg.content.startsWith('!cred')) {
             //  console.log(`Hola ${msg.channel.name}`);
-            if (costoCajas.hasOwnProperty("".concat(msg.channel.name))) {
+            if (costoCajas.hasOwnProperty("" + msg.channel.name)) {
                 var vals = msg.content.split(' ');
                 if (vals.length > 1) {
                     var y = +(vals[1]);
                     var total = (Math.round(((costoCajas[msg.channel.name]) * lastPrecioDollar * y + 4) / 10)) * 10;
                     console.log(msg);
-                    msg.channel.send("Son ".concat(total, " CUP "));
+                    msg.channel.send("Son " + total + " CUP ");
                 }
                 else {
                     msg.channel.send("Creo que hay algo mal con ese comando");
                 }
             }
             else {
-                msg.channel.send("No tengo datos del servicio ".concat(msg.channel.name));
+                msg.channel.send("No tengo datos del servicio " + msg.channel.name);
             }
             // console.log(msg.channel.name);
         }
         else {
             if (msg.content.startsWith('!dollar')) {
-                msg.channel.send("Original: ".concat(precioDollar, " CUP\nActual: ").concat(lastPrecioDollar, " CUP"));
+                msg.channel.send("Original: " + precioDollar + " CUP\nActual: " + lastPrecioDollar + " CUP");
             }
             else {
                 if (msg.content.startsWith('!remoto')) {
@@ -74,6 +79,15 @@ client.on('message', function (msg) {
                         filterWords = splittedMsg.join(' ');
                     }
                     getPriceRay(filterWords, msg);
+                }
+                else {
+                    if (msg.content.startsWith('!divisas')) {
+                        var answ = "";
+                        for (var key in divisasList) {
+                            answ = answ + ("\n" + key + ": divisasList[key]");
+                        }
+                        msg.channel.send(answ);
+                    }
                 }
             }
         }
@@ -128,7 +142,7 @@ function getPriceRay(filterText, msg) {
     });
 }
 function servicePriceListToString(services) {
-    return services.reduce(function (previusValue, currentValue) { return "".concat(previusValue, "\n ").concat(currentValue.name, " ").concat(currentValue.time, " ").concat(currentValue.val); }, "");
+    return services.reduce(function (previusValue, currentValue) { return previusValue + "\n " + currentValue.name + " " + currentValue.time + " " + currentValue.val; }, "");
 }
 keepAlive();
 console.log("antes de");

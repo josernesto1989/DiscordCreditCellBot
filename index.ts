@@ -47,6 +47,7 @@ let costoCajas: Object | any = {
   // "laelo":0.07,a
   "simunlocker-pro": 1.24,
   "simunlocker-spr": 1.24,
+  "mtk-gogogo": 1.05,
   // "magict":1.1,a
   "samhub": 1
 
@@ -97,7 +98,7 @@ client.on('message', (msg: any) => {
 				
 			let answ:string = "";
 			for (let key in divisasList) {
-			  answ = answ +`\n${key}: divisasList[key]`;
+			  answ = answ +`\n${key}: ${divisasList[key]}`;
 			}
 			msg.channel.send(answ);
 		}	
@@ -146,7 +147,7 @@ function getPriceRay(filterText:string, msg:any){
               let serv: ServicePrice ={name:"",val:0,type:"ray",time:""};
               serv.name = $(elem).find('td>a').text()
               serv.time= $(elem).find('td.text-center>span').text().trim(); // 
-              serv.val =  (+$(elem).find('td.text-right>span.nowrap').text().replace("USD","").trim())* lastPrecioDollar;
+              serv.val =  (+$(elem).find('td.text-right>span.nowrap').text().replace("USD","").trim())* divisasList['precioDollarRay'];
               if(filterText!="" && serv.name.toLowerCase().includes(filterText.toLowerCase())){
                   services.push(serv);
               }
